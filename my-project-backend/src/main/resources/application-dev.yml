@@ -1,0 +1,60 @@
+# 开发环境配置
+springdoc:
+  paths-to-match: /api/**
+  swagger-ui:
+    operations-sorter: alpha
+spring:
+  mail:
+    host: smtp.qq.com
+    username: 745874171@qq.com
+    password: uzdsngwcceqnbdhh
+    protocol: smtp
+    default-encoding: utf-8
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+            required: true
+  rabbitmq:
+    addresses: localhost
+    username: guest
+    password: guest
+    virtual-host: /
+  datasource:
+    url: jdbc:mysql://localhost:3306/study
+    username: root
+    password: Wsf5201314.
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  security:
+    jwt:
+      key: 'abcdefghijklmn'
+      expire: 72
+      limit:
+        base: 10
+        upgrade: 300
+        frequency: 30
+    filter:
+      order: -100
+  web:
+    verify:
+      mail-limit: 60
+    flow:
+      period: 3
+      limit: 100
+      block: 30
+    cors:
+      origin: '*'
+      credentials: false
+      methods: '*'
+  minio:
+    endpoint: 'http://localhost:9005'
+    username: 'minioadmin'
+    password: 'minioadmin'
+  weather:
+    key: a0ba045ecef5475c8a0a45d3e928786c
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 10MB
